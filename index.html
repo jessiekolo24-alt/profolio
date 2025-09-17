@@ -837,5 +837,17 @@ body {
       <p>Built with passion and dedication to excellence.</p>
     </div>
   </footer>
+
+  <script>
+    const updateColor = (variable, value) => {
+  document.documentElement.style.setProperty(`--${variable}`, value);
+};
+
+document.querySelectorAll('.color-control input').forEach(input => {
+  input.addEventListener('input', (e) => {
+    updateColor(e.target.dataset.var, e.target.value);
+  });
+});
+  </script>
 </body>
 </html>
