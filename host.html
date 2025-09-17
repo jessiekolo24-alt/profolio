@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jesse Kolo - Software Engineer Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <div id="welcome" class="welcome-screen">
+    <h1>👋 Welcome to My Portfolio</h1>
+  </div>
+
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">JK</a>
+      <nav class="nav">
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav__menu" id="navMenu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="themeToggle" class="theme-toggle">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+
+  <section id="hero" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Hello, I'm <span class="highlight">Jesse Kolo</span></h1>
+        <p class="hero-subtitle">Software Engineering Student & Web Developer</p>
+        <p class="hero-description">Passionate about creating innovative solutions and building user-friendly applications.</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn--primary">View My Work</a>
+          <a href="#contact" class="btn btn--secondary">Get In Touch</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/lovem.jpg" alt="Jesse Kolo" class="profile-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section id="about" class="section">
+    <div class="container narrow">
+      <h2>About Me</h2>
+      <p>I'm a dedicated Software Engineering student at Lincoln University with a passion for creating innovative digital solutions. As a <strong>Web Developer</strong>, I specialize in building beautiful, fast, and user-friendly websites that deliver exceptional user experiences.</p>
+      <p>My journey in technology is driven by curiosity and a commitment to continuous learning. I enjoy tackling complex problems and transforming ideas into functional, elegant solutions.</p>
+    </div>
+  </section>
+
+  <!-- ===== Projects ===== -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <h2>Featured Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-image">
+          </div>
+          <div class="project-content">
+            <h3>E-Commerce Platform</h3>
+            <p>A full-stack e-commerce solution with modern UI, secure payments, and inventory management.</p>
+            <div class="project-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">MongoDB</span>
+            </div>
+            <a href="#" class="btn btn--primary">Live Demo</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+                   </div>
+          <div class="project-content">
+            <h3>Task Management App</h3>
+            <p>A collaborative project management tool with real-time updates and team collaboration features.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Vue.js</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">CSS3</span>
+            </div>
+            <a href="#" class="btn btn--primary">View Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+
+          </div>
+          <div class="project-content">
+            <h3>Weather Dashboard</h3>
+            <p>A responsive weather application with location-based forecasts and interactive charts.</p>
+            <div class="project-tech">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">API Integration</span>
+              <span class="tech-tag">Chart.js</span>
+            </div>
+            <a href="#" class="btn btn--primary">Live Demo</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ===== Skills ===== -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Frontend</h3>
+          <ul class="skills-list">
+            <li>HTML5 & CSS3</li>
+            <li>JavaScript (ES6+)</li>
+            <li>React.js</li>
+            <li>Vue.js</li>
+            <li>Responsive Design</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>Backend</h3>
+          <ul class="skills-list">
+            <li>Node.js</li>
+            <li>Python</li>
+            <li>Database Design</li>
+            <li>API Development</li>
+            <li>Cloud Deployment</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>Tools & Others</h3>
+          <ul class="skills-list">
+            <li>Git & GitHub</li>
+            <li>VS Code</li>
+            <li>Figma</li>
+            <li>Agile Methodology</li>
+            <li>Problem Solving</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact" class="section section-alt">
+    <div class="container narrow">
+      <h2>Contact Me</h2>
+      <p>Let's work together! Fill out the form below or reach me via email.</p>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn btn--primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year">2025</span> Jesse Kolo. All Rights Reserved.</p>
+      <p>Built with passion and dedication to excellence.</p>
+    </div>
+  </footer>
+</body>
+</html>
