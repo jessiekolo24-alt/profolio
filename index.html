@@ -4,13 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jesse Kolo - Software Engineer Portfolio</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  <script defer src="js/script.js"></script>
-</head>
-<body>
-
   <style>
     /* ==========================================================================
    Global Variables
@@ -468,8 +463,8 @@ body {
   padding: 0 1rem;
 }
 
-.contact-form__input,
-.contact-form__textarea {
+.contact-form input,
+.contact-form textarea {
   padding: 1rem;
   border-radius: var(--radius);
   border: 1px solid var(--border);
@@ -478,47 +473,11 @@ body {
   transition: var(--transition);
 }
 
-.contact-form__input:focus,
-.contact-form__textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
   outline: none;
   border-color: var(--secondary);
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-}
-
-/* ==========================================================================
-   Color Theme Controls
-   ========================================================================== */
-.color-controls {
-  position: fixed;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #fff;
-  padding: 1rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  z-index: 1000;
-}
-
-.color-control {
-  display: flex;
-  align-items: center;
-  margin: 0.5rem 0;
-}
-
-.color-control__label {
-  margin-right: 0.5rem;
-  font-size: 0.875rem;
-  color: var(--text-primary);
-}
-
-.color-control__input {
-  border: none;
-  padding: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  cursor: pointer;
 }
 
 /* ==========================================================================
@@ -671,11 +630,12 @@ body {
   border: 0;
 }
   </style>
+</head>
+<body>
   <div id="welcome" class="welcome-screen">
     <h1>👋 Welcome to My Portfolio</h1>
   </div>
 
-  
   <header class="site-header">
     <div class="container header-inner">
       <a href="#" class="logo">JK</a>
@@ -696,7 +656,6 @@ body {
     </div>
   </header>
 
-
   <section id="hero" class="hero">
     <div class="container hero-inner">
       <div class="hero-text">
@@ -709,12 +668,11 @@ body {
         </div>
       </div>
       <div class="hero-image">
-        <img src="image.jpg" alt="Jesse Kolo" class="profile-image">
+        <img src="images/profile.jpg" alt="Jesse Kolo" class="profile-image">
       </div>
     </div>
   </section>
 
-  <!-- ===== About ===== -->
   <section id="about" class="section">
     <div class="container narrow">
       <h2>About Me</h2>
@@ -723,13 +681,13 @@ body {
     </div>
   </section>
 
-  <!-- ===== Projects ===== -->
   <section id="projects" class="section section-alt">
     <div class="container">
       <h2>Featured Projects</h2>
       <div class="projects-grid">
         <article class="project-card">
           <div class="project-image">
+            <img src="images/ecommerce.jpg" alt="E-Commerce Platform" loading="lazy">
           </div>
           <div class="project-content">
             <h3>E-Commerce Platform</h3>
@@ -745,7 +703,8 @@ body {
 
         <article class="project-card">
           <div class="project-image">
-                   </div>
+            <img src="images/taskmanager.jpg" alt="Task Management App" loading="lazy">
+          </div>
           <div class="project-content">
             <h3>Task Management App</h3>
             <p>A collaborative project management tool with real-time updates and team collaboration features.</p>
@@ -760,7 +719,7 @@ body {
 
         <article class="project-card">
           <div class="project-image">
-
+            <img src="image.jpg" alt="Weather Dashboard" loading="lazy">
           </div>
           <div class="project-content">
             <h3>Weather Dashboard</h3>
@@ -777,7 +736,6 @@ body {
     </div>
   </section>
   
-  <!-- ===== Skills ===== -->
   <section id="skills" class="section">
     <div class="container">
       <h2>Technical Skills</h2>
@@ -816,7 +774,6 @@ body {
     </div>
   </section>
 
-  <!-- ===== Contact ===== -->
   <section id="contact" class="section section-alt">
     <div class="container narrow">
       <h2>Contact Me</h2>
@@ -830,7 +787,6 @@ body {
     </div>
   </section>
 
-  <!-- ===== Footer ===== -->
   <footer class="site-footer">
     <div class="container">
       <p>© <span id="year">2025</span> Jesse Kolo. All Rights Reserved.</p>
@@ -839,15 +795,42 @@ body {
   </footer>
 
   <script>
-    const updateColor = (variable, value) => {
-  document.documentElement.style.setProperty(`--${variable}`, value);
-};
+    // Hamburger menu functionality
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
 
-document.querySelectorAll('.color-control input').forEach(input => {
-  input.addEventListener('input', (e) => {
-    updateColor(e.target.dataset.var, e.target.value);
-  });
-});
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+
+      // Close menu when clicking on a link
+      navMenu.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+        }
+      });
+    }
+
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+        themeToggle.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
+      });
+    }
+
+    // Welcome screen fade out
+    setTimeout(() => {
+      const welcome = document.getElementById('welcome');
+      if (welcome) {
+        welcome.style.opacity = '0';
+        welcome.style.visibility = 'hidden';
+      }
+    }, 3000);
   </script>
 </body>
 </html>
